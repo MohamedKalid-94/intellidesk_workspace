@@ -1,17 +1,4 @@
-from langgraph.graph import StateGraph, END
-from typing import TypedDict
+from graph.planner import needs_planning
 
-class State(TypedDict):
-    message: str
-
-def hello_node(state: State) -> State:
-    return {"message": state["message"] + " -> processed"}
-
-graph = StateGraph(State)
-graph.add_node("hello", hello_node)
-graph.set_entry_point("hello")
-graph.add_edge("hello", END)
-app = graph.compile()
-
-result = app.invoke({"message": "test"})
-print(result)
+print(needs_planning({"messages": [{"role": "user", "content": "What is 15% of 840?"}]}))       # False
+print(needs_planning({"messages": [{"role": "user", "content": "Summarise my notes and create tasks for the hard topics"}]}))  # True
