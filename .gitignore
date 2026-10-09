@@ -6,11 +6,9 @@
 # Python virtual environments
 venv/
 .venv/
-**/venv/
-**/.venv/
 
 # Python cache
-**pycache**/
+__pycache__/
 *.py[cod]
 
 # Node.js dependencies
