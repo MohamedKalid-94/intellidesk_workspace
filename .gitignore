@@ -1,26 +1,33 @@
-<<<<<<< HEAD
+# Environment variables and secrets
 .env
-.env.local
-node_modules/
-.next/
-__pycache__/
-venv/
-=======
+.env.*
+!.env.example
+
 # Python virtual environments
-.venv/
 venv/
+.venv/
 **/venv/
+**/.venv/
 
 # Python cache
-__pycache__/
+**pycache**/
 *.py[cod]
 
-# Node.js
+# Node.js dependencies
 node_modules/
-.next/
 
-# Environment variables
-.env
-.env.local
-.env.*.local
->>>>>>> 35539731350e98f7b39a9499df011e8bc5e6e0e0
+# Next.js build output
+.next/
+out/
+
+# Build and test artifacts
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE and OS files
+.vscode/
+.DS_Store
+Thumbs.db
